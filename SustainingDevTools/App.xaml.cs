@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace AccelaControlPanel
+namespace SustainingDevTools
 {
     /// <summary>
     /// Interaction logic for App.xaml

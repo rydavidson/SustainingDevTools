@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SustainingDevTools.ViewModel
 {
     /// <summary>
-    /// Interaction logic for OverviewControl.xaml
+    /// Interaction logic for AdvancedControl.xaml
     /// </summary>
-    public partial class OverviewControl : UserControl
+    public partial class AdvancedControl : UserControl
     {
-        public OverviewControl(Window callingWindow)
+        public AdvancedControl(Window callingWindow)
         {
             InitializeComponent();
         }
