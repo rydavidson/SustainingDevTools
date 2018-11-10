@@ -123,6 +123,8 @@
     <Compile Include="Common\Converters\PasswordEncryptionConverter.cs" />
     <Compile Include="Common\SecureUtils.cs" />
     <Compile Include="Modules\Git\GitAdapter.cs" />
+    <Compile Include="Modules\Settings\ProfileModel.cs" />
+    <Compile Include="Modules\Settings\ProfileService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\AdvancedControl.xaml.cs">
       <DependentUpon>AdvancedControl.xaml</DependentUpon>
