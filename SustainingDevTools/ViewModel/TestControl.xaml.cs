@@ -1,4 +1,5 @@
 ﻿using NLog;
+using rydavidson.Accela.Configuration.ConfigModels;
 using SustainingDevTools.Common;
 using SustainingDevTools.Modules.Git;
 using SustainingDevTools.Modules.Settings;
@@ -27,6 +28,7 @@ namespace SustainingDevTools.ViewModel
     public partial class TestControl : UserControl
     {
         SettingsService settingsService;
+        ProfileService profileService;
         public Cache cache { get; set; }
         Window mainWindow;
         private static Logger logger = LogManager.GetCurrentClassLogger();
@@ -71,13 +73,56 @@ namespace SustainingDevTools.ViewModel
 
         public void LoadSettings()
         {
-            if (cache.Settings is null)
-                Task.WaitAll(settingsService.ReloadSettings());
+            //if (cache.Settings is null)
+            //    Task.WaitAll(settingsService.ReloadSettings());
 
-            Dictionary<string, string> settings = cache.Settings;
-            passwordTextBox.Password = settings["git_password"];
-            PopulateRepos();
+            //Dictionary<string, string> settings = cache.Settings;
+            //passwordTextBox.Password = settings["git_password"];
+            //PopulateRepos();
 
+
+
+        }
+
+        private void LoadProfile()
+        {
+            Debug.WriteLine("Loading profile");
+            string profilePath = "Resources\\Profiles.json";
+            profileService = new ProfileService(profilePath);
+
+            foreach (ProfileModel profile in profileService.GetProfiles())
+            {
+                Debug.WriteLine(profile.Name);
+            }
+        }
+
+        private void WriteProfile()
+        {
+            string profilePath = "Resources\\Profiles.json";
+            AVServerConfig config = new MssqlConfig()
+            {
+                AvDbHost = "test",
+                AvDbName = "test",
+                AvComponent = "test",
+                AvJetspeedDbName = "test",
+                AvJetspeedUser = "test",
+                AvUser = "test",
+                DatabaseType = "mssql",
+                Port = "1433"
+            };
+
+            profileService = new ProfileService(profilePath);
+
+            ProfileModel testProfile = new ProfileModel()
+            {
+                Name = "Test Profile",
+                DatabaseConfiguration = config,
+                isProtected = false
+            };
+
+            profileService.AddProfileToList(testProfile);
+            profileService.AddProfileToList(testProfile);
+            profileService.SaveProfiles();
         }
 
         #endregion
@@ -127,7 +172,7 @@ namespace SustainingDevTools.ViewModel
 
         private void loadSettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            LoadSettings();
+            LoadProfile();
         }
 
         private async void GitButton_Click(object sender, RoutedEventArgs e)
