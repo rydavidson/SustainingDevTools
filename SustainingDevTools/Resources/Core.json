@@ -1,0 +1,65 @@
+﻿{
+  "last_updated": "2018-10-10",
+  "repositories": [
+    {
+      "id": "AA_Prod",
+      "name": "Automation",
+      "url": "https://github.com/Accela-Inc/AA_Prod.git",
+      "isPrivate": true,
+      "branches": [
+        {
+          "branch": "AA_9.3.8_HF",
+          "version": "9.3.8"
+        },
+        {
+          "branch": "AA_9.3.7_HF",
+          "version": "9.3.7"
+        },
+        {
+          "branch": "AA_9.3.6_HF",
+          "version": "9.3.6"
+        }
+      ]
+    },
+    {
+      "id": "AA-ENV",
+      "name": "Automation Environment",
+      "url": "https://github.com/Accela-Inc/AA-ENV.git",
+      "isPrivate": true,
+      "branches": [
+        {
+          "branch": "AA-ENV_DUB",
+          "version": ""
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "Automation",
+      "dependencies": [
+        {
+          "type": "repo",
+          "value": "AA_Prod"
+        },
+        {
+          "type": "repo",
+          "value": "AA-ENV"
+        }
+      ]
+    },
+    {
+      "id": "Citizen Access",
+      "dependencies": [
+        {
+          "type": "repo",
+          "value": "ACA_Prod"
+        },
+        {
+          "type": "product",
+          "value": "Automation"
+        }
+      ]
+    }
+  ]
+}
