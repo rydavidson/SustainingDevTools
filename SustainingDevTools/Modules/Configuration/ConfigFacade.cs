@@ -62,6 +62,11 @@ namespace SustainingDevTools.Modules.Configuration
             }  
         }
 
+        private List<string> GetConfigFilesForComponent(string componentDirectory)
+        {
+
+        }
+
         public void SetDatabaseConfig(AVServerConfig _conf)
         {
 
