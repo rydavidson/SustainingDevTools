@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Console.ViewModel.DatabaseControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Console.ViewModel"
+             xmlns:converters="clr-namespace:Console.Common.Converters"
+             xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             mc:Ignorable="d" 
+             d:DesignHeight="495" d:DesignWidth="691">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="0,0,0,8">
+        <Label Content="Git Repo Base Directory" HorizontalAlignment="Left" Margin="21,83,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="repoBaseDirTextBox" HorizontalAlignment="Left" Height="23" Margin="161,86,0,0" TextWrapping="Wrap" Text="{Binding cache.Settings[repo_base_dir],Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
+        <Label Content="Git Settings" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Height="40" Width="135" FontSize="20"/>
+        <Label Content="Git Username" HorizontalAlignment="Left" Margin="21,111,0,0" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="gitUsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="{Binding Path=cache.Settings[git_username], Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
+        <Label Content="Git Password" HorizontalAlignment="Left" Margin="21,139,0,0" VerticalAlignment="Top" Width="135"/>
+        <TextBox x:Name="gitPasswordTextBox" HorizontalAlignment="Left" Height="23" Margin="161,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="479"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="595,420,0,0" VerticalAlignment="Top" Width="86" Height="57" FontSize="20"/>
+    </Grid>
+</UserControl>

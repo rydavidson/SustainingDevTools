@@ -6,13 +6,13 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Console.exe.config_1" Value="..\SustainingDevTools\bin\x64\Debug"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Console.exe_1" Value="..\SustainingDevTools\bin\x64\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Console.exe.config_1" Value="..\Console\bin\x64\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Console.exe_1" Value="..\Console\bin\x64\Release"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_FontAwesome.WPF.dll_1" Value="..\packages\FontAwesome.WPF.4.7.0.9\lib\net40"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_LibGit2Sharp.dll_1" Value="..\packages\LibGit2Sharp.0.25.3\lib\netstandard2.0"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_NLog.dll_1" Value="..\packages\NLog.4.5.10\lib\net45"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll_1" Value="..\packages\Newtonsoft.Json.11.0.2\lib\net45"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_rydavidson.Accela.Configuration.dll_1" Value="..\..\AccelaLib\Configuration\bin\x64\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_rydavidson.Accela.Configuration.dll_1" Value="..\Configuration\bin\x64\Release"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Console.exe.config_1" Value="Console.exe.config"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Console.exe_1" Value="Console.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_FontAwesome.WPF.dll_1" Value="FontAwesome.WPF.dll"/>
@@ -74,7 +74,7 @@
     <ROW Component="ProductInformation" ComponentId="{33223605-A6C6-4B84-9EEB-414A5844966B}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{DE7232FD-4BEC-419C-8182-74622878A5F0}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="SustainingDevTools_PrimaryOutput" ComponentId="{9728A4C6-062E-48E8-8F16-104DEEC5CB08}" Directory_="SustainingDevTools_Dir" Attributes="256" KeyPath="Console.exe_1"/>
-    <ROW Component="SustainingDevTools_References" ComponentId="{A292053F-E24D-4109-B7AE-6F69E6F1C9ED}" Directory_="SustainingDevTools_Dir" Attributes="256" KeyPath="NLog.dll_1"/>
+    <ROW Component="SustainingDevTools_References" ComponentId="{A292053F-E24D-4109-B7AE-6F69E6F1C9ED}" Directory_="SustainingDevTools_Dir" Attributes="256" KeyPath="rydavidson.Accela.Configuration.dll_1"/>
     <ROW Component="System.AppContext.dll" ComponentId="{D3D85AAC-16E8-4199-B766-310E038E2986}" Directory_="APPDIR" Attributes="0" KeyPath="System.AppContext.dll"/>
     <ROW Component="System.Collections.Concurrent.dll" ComponentId="{7FA02D2C-45B9-4096-98CB-2DB875130F6E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Collections.Concurrent.dll"/>
     <ROW Component="System.Collections.NonGeneric.dll" ComponentId="{37F0D451-D456-4DE3-AA2E-15B51F10139B}" Directory_="APPDIR" Attributes="0" KeyPath="System.Collections.NonGeneric.dll"/>
@@ -187,7 +187,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="Console.exe" Component_="Console.exe_1" FileName="Console.exe" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\Console.exe" SelfReg="false" NextFile="Console.exe.config" DigSign="true"/>
     <ROW File="Console.exe.config" Component_="Console.exe.config_1" FileName="CONSOL~1.CON|Console.exe.config" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\Console.exe.config" SelfReg="false" NextFile="Console.pdb"/>
-    <ROW File="Console.exe.config_1" Component_="SustainingDevTools_PrimaryOutput" FileName="CONSOL~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_Console.exe.config_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Console.exe.config_1&gt;" SelfReg="false" NextFile="rydavidson.Accela.Configuration.dll_1"/>
+    <ROW File="Console.exe.config_1" Component_="SustainingDevTools_PrimaryOutput" FileName="CONSOL~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_Console.exe.config_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Console.exe.config_1&gt;" SelfReg="false" NextFile="FontAwesome.WPF.dll_1"/>
     <ROW File="Console.exe_1" Component_="SustainingDevTools_PrimaryOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_Console.exe_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Console.exe_1&gt;" SelfReg="false" NextFile="Console.exe.config_1" DigSign="true"/>
     <ROW File="Console.pdb" Component_="Console.exe_1" FileName="Console.pdb" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\Console.pdb" SelfReg="false" NextFile="FontAwesome.WPF.dll"/>
     <ROW File="Core.json" Component_="Core.json" FileName="CORE~1.JSO|Core.json" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\Resources\Core.json" SelfReg="false" NextFile="Settings.json"/>
@@ -202,7 +202,7 @@
     <ROW File="Microsoft.Win32.Primitives.dll" Component_="Microsoft.Win32.Primitives.dll" FileName="MICROS~1.DLL|Microsoft.Win32.Primitives.dll" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\Microsoft.Win32.Primitives.dll" SelfReg="false" NextFile="netstandard.dll"/>
     <ROW File="NLog.config" Component_="Console.exe.config_1" FileName="NLOG~1.CON|NLog.config" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\NLog.config" SelfReg="false" NextFile="NLog.dll"/>
     <ROW File="NLog.dll" Component_="NLog.dll" FileName="NLog.dll" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\NLog.dll" SelfReg="false" NextFile="NLog.xml"/>
-    <ROW File="NLog.dll_1" Component_="SustainingDevTools_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_NLog.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_NLog.dll_1&gt;" SelfReg="false"/>
+    <ROW File="NLog.dll_1" Component_="SustainingDevTools_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_NLog.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_NLog.dll_1&gt;" SelfReg="false" NextFile="rydavidson.Accela.Configuration.dll_1"/>
     <ROW File="NLog.xml" Component_="Console.exe.config_1" FileName="NLog.xml" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\NLog.xml" SelfReg="false" NextFile="Core.json"/>
     <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\Newtonsoft.Json.dll" SelfReg="false" NextFile="Newtonsoft.Json.xml"/>
     <ROW File="Newtonsoft.Json.dll_1" Component_="SustainingDevTools_References" FileName="NEWTON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Newtonsoft.Json.dll_1&gt;" SelfReg="false" NextFile="NLog.dll_1"/>
@@ -314,7 +314,7 @@
     <ROW File="libgit28e0b172.so_4" Component_="libgit28e0b172.so_4" FileName="LIBGIT~1.SO|libgit2-8e0b172.so" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\lib\rhel-x64\libgit2-8e0b172.so" SelfReg="false" NextFile="git28e0b172.dll"/>
     <ROW File="netstandard.dll" Component_="netstandard.dll" FileName="NETSTA~1.DLL|netstandard.dll" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\netstandard.dll" SelfReg="false" NextFile="Newtonsoft.Json.dll"/>
     <ROW File="rydavidson.Accela.Configuration.dll" Component_="rydavidson.Accela.Configuration.dll_1" FileName="RYDAVI~1.DLL|rydavidson.Accela.Configuration.dll" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\rydavidson.Accela.Configuration.dll" SelfReg="false" NextFile="rydavidson.Accela.Configuration.pdb"/>
-    <ROW File="rydavidson.Accela.Configuration.dll_1" Component_="SustainingDevTools_References" FileName="RYDAVI~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_rydavidson.Accela.Configuration.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_rydavidson.Accela.Configuration.dll_1&gt;" SelfReg="false" NextFile="FontAwesome.WPF.dll_1"/>
+    <ROW File="rydavidson.Accela.Configuration.dll_1" Component_="SustainingDevTools_References" FileName="RYDAVI~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_rydavidson.Accela.Configuration.dll_1]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_rydavidson.Accela.Configuration.dll_1&gt;" SelfReg="false"/>
     <ROW File="rydavidson.Accela.Configuration.pdb" Component_="rydavidson.Accela.Configuration.dll_1" FileName="RYDAVI~1.PDB|rydavidson.Accela.Configuration.pdb" Attributes="0" SourcePath="..\SustainingDevTools\bin\x64\Release\rydavidson.Accela.Configuration.pdb" SelfReg="false" NextFile="System.AppContext.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
@@ -445,12 +445,12 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
-    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="SustainingDevTools" OutputGroup="PrimaryOutput" OutputFile="Console.exe_1" OutputFileShortcut="Console"/>
-    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="SustainingDevTools" OutputGroup="PrimaryOutput" OutputFile="Console.exe.config_1"/>
-    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="SustainingDevTools" OutputGroup="References" OutputFile="rydavidson.Accela.Configuration.dll_1"/>
-    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="SustainingDevTools" OutputGroup="References" OutputFile="FontAwesome.WPF.dll_1"/>
-    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="SustainingDevTools" OutputGroup="References" OutputFile="LibGit2Sharp.dll_1"/>
-    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="SustainingDevTools" OutputGroup="References" OutputFile="Newtonsoft.Json.dll_1"/>
-    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="SustainingDevTools" OutputGroup="References" OutputFile="NLog.dll_1"/>
+    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="Console" OutputGroup="PrimaryOutput" OutputFile="Console.exe_1" OutputFileShortcut="Console"/>
+    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="Console" OutputGroup="PrimaryOutput" OutputFile="Console.exe.config_1"/>
+    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="Console" OutputGroup="References" OutputFile="FontAwesome.WPF.dll_1"/>
+    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="Console" OutputGroup="References" OutputFile="LibGit2Sharp.dll_1"/>
+    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="Console" OutputGroup="References" OutputFile="Newtonsoft.Json.dll_1"/>
+    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="Console" OutputGroup="References" OutputFile="NLog.dll_1"/>
+    <ROW ProjectId="{aa5a0bc3-85f1-4717-ad26-4a4ef86e736b}" ProjectName="Console" OutputGroup="References" OutputFile="rydavidson.Accela.Configuration.dll_1"/>
   </COMPONENT>
 </DOCUMENT>
