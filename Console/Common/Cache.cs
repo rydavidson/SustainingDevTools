@@ -51,7 +51,7 @@ namespace Console.Common
             get
             {
                 if (_configAdapters is null)
-                    return new Dictionary<string, ConfigAdapter>();
+                    _configAdapters = new Dictionary<string, ConfigAdapter>();
                 return _configAdapters;
             }
             set
