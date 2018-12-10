@@ -8,7 +8,7 @@ namespace rydavidson.Accela.Configuration.IO.Interfaces
     interface IConfigWriter
     {
         void WriteValueToConfig(string key, string value);
-
-        
+        string GetPathToConfigFile();
     }
+
 }

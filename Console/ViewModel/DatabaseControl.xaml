@@ -10,13 +10,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="495" d:DesignWidth="691">
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="0,0,0,8">
-        <Label Content="Git Repo Base Directory" HorizontalAlignment="Left" Margin="21,83,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="repoBaseDirTextBox" HorizontalAlignment="Left" Height="23" Margin="161,86,0,0" TextWrapping="Wrap" Text="{Binding cache.Settings[repo_base_dir],Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
-        <Label Content="Git Settings" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Height="40" Width="135" FontSize="20"/>
-        <Label Content="Git Username" HorizontalAlignment="Left" Margin="21,111,0,0" VerticalAlignment="Top" Width="135"/>
-        <TextBox x:Name="gitUsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="{Binding Path=cache.Settings[git_username], Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
-        <Label Content="Git Password" HorizontalAlignment="Left" Margin="21,139,0,0" VerticalAlignment="Top" Width="135"/>
-        <TextBox x:Name="gitPasswordTextBox" HorizontalAlignment="Left" Height="23" Margin="161,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="479"/>
-        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="595,420,0,0" VerticalAlignment="Top" Width="86" Height="57" FontSize="20"/>
+        <Label Content="Database Settings" HorizontalAlignment="Left" Margin="236,20,0,0" VerticalAlignment="Top" Height="40" Width="169" FontSize="20"/>
+        <Button x:Name="saveButton" Click="SaveConfig" Content="Save" HorizontalAlignment="Left" Margin="595,420,0,0" VerticalAlignment="Top" Width="86" Height="57" FontSize="20"/>
+        <Label Content="AA Database" HorizontalAlignment="Left" Margin="120,132,0,0" VerticalAlignment="Top"/>
+        <Label Content="Jetspeed Database" HorizontalAlignment="Left" Margin="425,132,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AAUsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="154,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="5"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="75,190,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="75,220,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="DatabaseServerTextBox" HorizontalAlignment="Left" Height="23" Margin="179,75,0,0" TextWrapping="Wrap" Text="test" VerticalAlignment="Top" Width="256" TabIndex="1"/>
+        <Label Content="Database Server Hostname" HorizontalAlignment="Left" Margin="21,72,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AADatabaseTextBox" HorizontalAlignment="Left" Height="23" Margin="154,163,0,0" TextWrapping="Wrap" Text="test" VerticalAlignment="Top" Width="120" TabIndex="4"/>
+        <Label Content="Database" HorizontalAlignment="Left" Margin="76,160,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="PortTextBox" HorizontalAlignment="Left" Height="23" Margin="484,75,0,0" TextWrapping="Wrap" Text="test" VerticalAlignment="Top" Width="43" TabIndex="2"/>
+        <Label Content="Port" HorizontalAlignment="Left" Margin="447,72,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="DatabaseTypeComboBox" HorizontalAlignment="Left" Margin="545,75,0,0" VerticalAlignment="Top" Width="55" TabIndex="3">
+            <ListBoxItem Content="MSSQL"/>
+            <ListBoxItem Content="Oracle"/>
+        </ComboBox>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="545,44,0,0" VerticalAlignment="Top" Width="55" HorizontalContentAlignment="Center"/>
+        <PasswordBox x:Name="AAPasswordBox" HorizontalAlignment="Left" Margin="154,223,0,0" VerticalAlignment="Top" Width="120" Height="23" TabIndex="6"/>
+        <TextBox x:Name="JetspeedUsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="447,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="8"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="368,190,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="368,220,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="JetspeedDatabaseTextBox" HorizontalAlignment="Left" Height="23" Margin="447,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="AADatabaseTextBox_Copy_TextChanged" TabIndex="7"/>
+        <Label Content="Database" HorizontalAlignment="Left" Margin="369,160,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="JetspeedPasswordBox" HorizontalAlignment="Left" Margin="447,223,0,0" VerticalAlignment="Top" Width="120" Height="23" TabIndex="9"/>
     </Grid>
 </UserControl>

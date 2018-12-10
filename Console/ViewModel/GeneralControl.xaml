@@ -19,7 +19,19 @@
         <Label Content="Git Username" HorizontalAlignment="Left" Margin="21,111,0,0" VerticalAlignment="Top" Width="135"/>
         <TextBox x:Name="gitUsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="{Binding Path=cache.Settings[git_username], Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
         <Label Content="Git Password" HorizontalAlignment="Left" Margin="21,139,0,0" VerticalAlignment="Top" Width="135"/>
-        <TextBox x:Name="gitPasswordTextBox" HorizontalAlignment="Left" Height="23" Margin="161,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="479"/>
-        <Button x:Name="saveButton" Content="Save" Click="saveButton_Click" HorizontalAlignment="Left" Margin="595,420,0,0" VerticalAlignment="Top" Width="86" Height="57" FontSize="20"/>
+        <PasswordBox x:Name="gitPasswordTextBox" HorizontalAlignment="Left" Height="23" Margin="161,142,0,0" VerticalAlignment="Top" Width="479"/>
+        <Button x:Name="GitButton" Content="Clone" Click="GitButton_Click" HorizontalAlignment="Left" Margin="240,218,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+        <ComboBox x:Name="repoComboBox" HorizontalAlignment="Left" Margin="105,216,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="repoComboBox_SelectionChanged"/>
+        <Label Content="Repo" HorizontalAlignment="Left" Margin="23,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="Branch" HorizontalAlignment="Left" Margin="23,243,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="branchComboBox" HorizontalAlignment="Left" Margin="105,243,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="DevDirTextBox" HorizontalAlignment="Left" Height="26" Margin="161,170,0,0" Text="{Binding cache.Settings[env_base_dir],Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" TextWrapping="Wrap" VerticalAlignment="Top" Width="479"/>
+        <Label Content="Dev Directory" HorizontalAlignment="Left" Margin="21,165,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="saveButton_Copy" Click="saveButton_Click"  Content="Save" HorizontalAlignment="Left" Margin="540,216,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+        <Label x:Name="actionLabel" Height="30" Content="" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Margin="0,440,35,0" VerticalAlignment="Top" Width="656"/>
+        <ProgressBar x:Name="ProgressBar" Minimum="0" HorizontalAlignment="Left" Margin="0,470,0,0" Width="691"/>
+        <Grid Margin="661,439,0,18" Height="30" Width="30">
+            <fa:ImageAwesome x:Name="loadingSpinner"  Height="25" Width="25" Icon="CircleOutlineNotch" Spin="False"/>
+        </Grid>
     </Grid>
 </UserControl>

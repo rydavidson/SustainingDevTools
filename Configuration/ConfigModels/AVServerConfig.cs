@@ -147,6 +147,7 @@ namespace rydavidson.Accela.Configuration.ConfigModels
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine("av.db: " + DatabaseType);
             sb.AppendLine("av.db.host: " + AvDbHost);
             sb.AppendLine("av.db.sid: " + AvDbHost);
             sb.AppendLine("av.db.username: " + AvDbHost);

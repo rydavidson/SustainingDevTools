@@ -28,9 +28,9 @@
             </Border>
             <Button x:Name="overviewButton" Click="overviewButton_Click" Content="Overview" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" BorderThickness="1,2,1,1"/>
             <Button x:Name="generalButton" Click="generalButton_Click" Content="General" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,55,0,0"/>
-            <Button x:Name="debuggingButton" Click="debuggingButton_Click" Content="Debugging" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,165,0,0" IsDefault="True" BorderThickness="1,1,1,1"/>
-            <Button x:Name="advancedButton" Click="advancedButton_Click" Content="Advanced" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,275,0,0" BorderThickness="1,1,1,2"/>
-            <Button x:Name="settingsButton" Click="settingsButton_Click" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,220,0,0" Content="Settings" BorderThickness="1,1,1,1"/>
+            <Button x:Name="debuggingButton" IsEnabled="False" Click="debuggingButton_Click" Content="Debugging" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,165,0,0" IsDefault="True" BorderThickness="1,1,1,1"/>
+            <Button x:Name="advancedButton" IsEnabled="False" Click="advancedButton_Click" Content="Advanced" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,275,0,0" BorderThickness="1,1,1,2"/>
+            <Button x:Name="settingsButton" IsEnabled="False" Click="settingsButton_Click" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,220,0,0" Content="Settings" BorderThickness="1,1,1,1"/>
             <Label x:Name="bottomBar" Content="" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}" Grid.ColumnSpan="2" BorderThickness="0,1,0,0">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>

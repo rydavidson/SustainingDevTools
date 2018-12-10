@@ -8,5 +8,6 @@ namespace rydavidson.Accela.Configuration.IO.Interfaces
     interface IConfigReader
     {
         IAccelaConfig Load();
+        string GetPathToConfigFile();
     }
 }

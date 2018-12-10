@@ -8,6 +8,7 @@ using rydavidson.Accela.Configuration.ConfigModels;
 using System.IO;
 using Console.Common;
 using System.Diagnostics;
+using rydavidson.Accela.Configuration.IO.Interfaces;
 
 namespace Console.Modules.Configuration
 {
@@ -41,13 +42,13 @@ namespace Console.Modules.Configuration
             {
                 if (dir.FullName.Contains("av."))
                 {
-                    string cDir = dir.FullName.Substring(dir.FullName.LastIndexOf('\\'), dir.FullName.Length - (dir.FullName.LastIndexOf('\\') + 1));
+                    string cDir = dir.FullName.Substring(dir.FullName.LastIndexOf('\\'), dir.FullName.Length - dir.FullName.LastIndexOf('\\'));
                     cDir.Trim();
                     
                     if (cDir.Contains("\\"))
                     {
                         logger.Debug($"The substring for the component sub directory {dir.FullName} got messed up. Removing the backslash");
-                        cDir.Replace("\\","");
+                        cDir = cDir.Replace("\\","");
                         logger.Debug($"Current component sub directory value: {cDir}");
                     }
 
@@ -62,17 +63,35 @@ namespace Console.Modules.Configuration
             }  
         }
 
-        //private List<string> GetConfigFilesForComponent(string componentDirectory)
-        //{
-
-        //}
-
-        public void SetDatabaseConfig(AVServerConfig _conf)
+        public void SetDatabaseConfig(IAccelaConfig _conf, string component)
         {
+            bool updateAllComponents = false;
+            if (component is null)
+                updateAllComponents = true;
 
+            if (updateAllComponents)
+            {
+                foreach (ConfigAdapter configAdapter in cache.ConfigAdapters.Values)
+                {
+                    configAdapter.WriteConfigToFile(_conf);
+                }
+            }
+            else
+            {
+                ConfigAdapter config;
+                if(cache.ConfigAdapters.TryGetValue(component, out config))
+                {
+                    config.WriteConfigToFile(_conf);
+                }
+                else
+                {
+                    errorAction($"Failed to obtain adapter for component {component}");
+                }
+            }
+                
         }
 
-        public AVServerConfig GetDatabaseConfig()
+        public IAccelaConfig GetDatabaseConfig(string component)
         {
             return new AVServerConfig();
         }

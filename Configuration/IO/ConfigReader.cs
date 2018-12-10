@@ -62,5 +62,10 @@ namespace rydavidson.Accela.Configuration.IO
 
             return config as OracleConfig;
         }
+
+        public string GetPathToConfigFile()
+        {
+            return pathToConfigFile;
+        }
     }
 }

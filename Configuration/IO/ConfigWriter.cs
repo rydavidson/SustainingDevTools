@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace rydavidson.Accela.Configuration.IO
 {
-    class ConfigWriter :  IConfigWriter
+    class ConfigWriter : IConfigWriter
     {
         private string pathToConfigFile;
 
@@ -22,7 +22,7 @@ namespace rydavidson.Accela.Configuration.IO
             if ((_key == "av.db.host" || _key == "av.jetspeed.db.host") && _val.Contains(":"))
                 _val = StripPortFromHost(_key, _val);
 
-            string content = File.ReadAllText(pathToConfigFile, Encoding.Default); // read in the config file
+            string content = ReadConfigFile(pathToConfigFile); // read in the config file
             int indexOfKey = content.IndexOf(_key); // get the start of the config item
             if (indexOfKey == -1)
                 return; // exit if the config item isn't found
@@ -35,7 +35,7 @@ namespace rydavidson.Accela.Configuration.IO
             if (oldValue == "" || oldValue == null) // handle empty values
             {
                 if (oldConfigLine.Contains("="))
-                    newConfigLine = oldConfigLine + _val; 
+                    newConfigLine = oldConfigLine + _val;
                 if (!oldConfigLine.Contains("="))
                     newConfigLine = oldConfigLine + "=" + _val;
             }
@@ -48,6 +48,26 @@ namespace rydavidson.Accela.Configuration.IO
 
             File.WriteAllText(pathToConfigFile, newFile, Encoding.Default);
 
+        }
+
+        private string ReadConfigFile(string _path)
+        {
+            string line;
+            string content = "";
+            using (StreamReader reader = new StreamReader(_path))
+            {
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (line.Contains("#"))
+                    {
+                        line = "";
+                        continue;
+                    }
+                    content += line + Environment.NewLine;
+                }
+            }
+
+            return content;
         }
 
         private string StripPortFromHost(string _key, string _hostWithPort)
@@ -65,6 +85,11 @@ namespace rydavidson.Accela.Configuration.IO
                     break;
             }
             return _hostWithPort.Remove(_hostWithPort.IndexOf(":"));
+        }
+
+        public string GetPathToConfigFile()
+        {
+            return pathToConfigFile;
         }
     }
 }

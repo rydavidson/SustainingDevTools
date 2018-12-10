@@ -14,7 +14,6 @@ namespace rydavidson.Accela.Configuration.ConfigModels
         public string ExceptionSorterClass { get; set; }
         public string ConnectionUrl { get; set; }
         public bool SharePreparedStatements { get; set; }
-        
 
         #region oracle constants
 
@@ -38,7 +37,7 @@ namespace rydavidson.Accela.Configuration.ConfigModels
 
         #endregion
 
-        public JBossConfig(AVServerConfig avconfig)
+        public JBossConfig(string databaseType)
         {
             DriverName = OracleDriverName;
             DriverClass = OracleDriverClass;
@@ -47,7 +46,7 @@ namespace rydavidson.Accela.Configuration.ConfigModels
             ConnectionUrl = OracleConnectionUrl;
             SharePreparedStatements = OracleSharePreparedStatements;
 
-            if(avconfig.DatabaseType == "mssql")
+            if(databaseType.ToLower() == "mssql")
             {
                 DriverName = MSSQLDriverName;
                 DriverClass = MSSQLDriverClass;
@@ -58,5 +57,14 @@ namespace rydavidson.Accela.Configuration.ConfigModels
             }
         }
 
+        public string GetAvDatabasePassword()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetJetspeedDatabasePassword()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
