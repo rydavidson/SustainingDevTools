@@ -15,28 +15,27 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="792" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="101*"/>
-                <ColumnDefinition Width="691*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20*"/>
                 <RowDefinition Height="495*"/>
                 <RowDefinition Height="26*"/>
             </Grid.RowDefinitions>
-            <Border BorderBrush="Black" BorderThickness="1,1,0,1" Grid.Column="1" HorizontalAlignment="Left" Height="495" Grid.Row="1" VerticalAlignment="Top" Width="691" CornerRadius="1">
+            <Border BorderBrush="Black" BorderThickness="1,1,0,1" HorizontalAlignment="Left" Height="495" Grid.Row="1" VerticalAlignment="Top" Width="691" CornerRadius="1" Margin="101,0,0,0">
                 <ContentControl x:Name="contentControl"/>
             </Border>
-            <Button x:Name="overviewButton" Click="overviewButton_Click" Content="Overview" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" BorderThickness="1,2,1,1"/>
+            <Button x:Name="overviewButton" IsEnabled="False" Click="overviewButton_Click" Content="Overview" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" BorderThickness="1,2,1,1"/>
             <Button x:Name="generalButton" Click="generalButton_Click" Content="General" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,55,0,0"/>
             <Button x:Name="debuggingButton" IsEnabled="False" Click="debuggingButton_Click" Content="Debugging" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,165,0,0" IsDefault="True" BorderThickness="1,1,1,1"/>
             <Button x:Name="advancedButton" IsEnabled="False" Click="advancedButton_Click" Content="Advanced" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,275,0,0" BorderThickness="1,1,1,2"/>
             <Button x:Name="settingsButton" IsEnabled="False" Click="settingsButton_Click" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,220,0,0" Content="Settings" BorderThickness="1,1,1,1"/>
-            <Label x:Name="bottomBar" Content="" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}" Grid.ColumnSpan="2" BorderThickness="0,1,0,0">
+            <Label x:Name="bottomBar" Content="" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}" BorderThickness="0,1,0,0">
                 <Label.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
                 </Label.Foreground>
             </Label>
-            <Menu x:Name="mainMenu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="792" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderThickness="1,0,0,0" Margin="0"/>
+            <Menu x:Name="mainMenu" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="792" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderThickness="1,0,0,0" Margin="0"/>
             <Button x:Name="databaseButton" Click="databaseButton_Click" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="55" Margin="0,110,0,0" Content="Database" BorderThickness="1,1,1,1"/>
         </Grid>
 

@@ -1,5 +1,5 @@
 ﻿{
-  "last_updated": "2018-10-10",
+  "last_updated": "2018-12-27",
   "repositories": [
     {
       "id": "AA_Prod",
@@ -8,15 +8,33 @@
       "isPrivate": true,
       "branches": [
         {
+          "branch": "AA_10.0.2_HF",
+          "multipleVersions": false,
+          "version": "10.0.2"
+        },
+        {
+          "branch": "AA_10.0.1_HF",
+          "multipleVersions": false,
+          "version": "10.0.1"
+        },
+        {
           "branch": "AA_9.3.8_HF",
+          "multipleVersions": false,
+          "version": "9.3.10"
+        },
+        {
+          "branch": "AA_9.3.8_HF",
+          "multipleVersions": false,
           "version": "9.3.8"
         },
         {
           "branch": "AA_9.3.7_HF",
+          "multipleVersions": false,
           "version": "9.3.7"
         },
         {
           "branch": "AA_9.3.6_HF",
+          "multipleVersions": false,
           "version": "9.3.6"
         }
       ]
@@ -28,8 +46,22 @@
       "isPrivate": true,
       "branches": [
         {
+          "branch": "AA-ENV_19.1.0_FP",
+          "multipleVersions": false,
+          "version": "19.1.0"
+        },
+        {
           "branch": "AA-ENV_DUB",
-          "version": ""
+          "multipleVersions": true,
+          "version": [
+            "10.0.2",
+            "10.0.1",
+            "9.3.10",
+            "9.3.8",
+            "9.3.7",
+            "9.3.6",
+            "9.3.4"
+          ]
         }
       ]
     }

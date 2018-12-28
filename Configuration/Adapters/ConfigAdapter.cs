@@ -141,15 +141,7 @@ namespace rydavidson.Accela.Configuration.Adapters
 
             if (currentType == TYPE.properties)
             {
-                switch ((_config as AVServerConfig).DatabaseType.ToLower())
-                {
-                    case "mssql":
-                        WriteAVConfig((MssqlConfig)_config);
-                        break;
-                    case "oracle":
-                        WriteAVConfig((OracleConfig)_config);
-                        break;
-                }
+                WriteAVConfig((AVServerConfig)_config);
             }
             else
             {
@@ -165,6 +157,7 @@ namespace rydavidson.Accela.Configuration.Adapters
             configWriter.WriteValueToConfig("av.db", _config.DatabaseType.ToLower());
             configWriter.WriteValueToConfig("aa.database", _config.DatabaseType.ToLower());
             configWriter.WriteValueToConfig("av.db.host", _config.AvDbHost);
+            configWriter.WriteValueToConfig("av.db.port", _config.Port);
             // Handle web specific differences
             if (PathToConfigFile.Contains("av.web"))
             {
@@ -184,6 +177,7 @@ namespace rydavidson.Accela.Configuration.Adapters
             if (PathToConfigFile.Contains("av.biz"))
             {
                 configWriter.WriteValueToConfig("av.jetspeed.db.host", _config.AvDbHost);
+                configWriter.WriteValueToConfig("av.jetspeed.db.port", _config.Port);
                 configWriter.WriteValueToConfig("av.jetspeed.db.sid", _config.AvJetspeedDbName);
                 configWriter.WriteValueToConfig("av.jetspeed.db.servicename", _config.AvJetspeedDbName);
                 configWriter.WriteValueToConfig("av.jetspeed.db.username", _config.AvJetspeedUser);
