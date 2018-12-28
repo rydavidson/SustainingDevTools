@@ -90,18 +90,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\ExceptionHandler.cs" />
-    <Compile Include="Common\Logger.cs" />
     <Compile Include="Common\SecureUtils.cs" />
     <Compile Include="ConfigModels\AVServerConfig.cs" />
-    <Compile Include="Handlers\ConfigurationExceptionHandler.cs" />
     <Compile Include="IO\ConfigReader.cs" />
     <Compile Include="IO\ConfigWriter.cs" />
     <Compile Include="Adapters\ConfigAdapter.cs" />
     <Compile Include="ConfigModels\JBossConfig.cs" />
     <Compile Include="ConfigModels\MSSQLConfig.cs" />
     <Compile Include="ConfigModels\OracleConfig.cs" />
-    <Compile Include="Common\AAUtil.cs" />
     <Compile Include="IO\Interfaces\IAccelaConfig.cs" />
     <Compile Include="IO\Interfaces\IConfigReader.cs" />
     <Compile Include="IO\Interfaces\IConfigWriter.cs" />

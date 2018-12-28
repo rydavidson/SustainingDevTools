@@ -10,7 +10,7 @@ namespace rydavidson.Accela.Configuration.Adapters
     public class ConfigAdapter
     {
         private string PathToConfigFile { get; set; }
-        public Logger Log { get; set; }
+       // public Logger Log { get; set; }
 
         // provide external messaging
 
@@ -52,8 +52,7 @@ namespace rydavidson.Accela.Configuration.Adapters
                 {
                     currentType = TYPE.xml;
                     configWriter = new XMLConfigWriter(PathToConfigFile);
-                    configReader = new XMLConfigReader(PathToConfigFile);
-                }
+                    configReader = new XMLConfigReader(PathToConfigFile,false);                }
             }
             if (currentMode == MODE.dir)
             {
@@ -72,7 +71,7 @@ namespace rydavidson.Accela.Configuration.Adapters
             else
             {
                 configWriter = new XMLConfigWriter(pathToConfigFile);
-                configReader = new XMLConfigReader(pathToConfigFile);
+                configReader = new XMLConfigReader(pathToConfigFile,false);
             }
 
         }

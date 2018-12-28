@@ -56,15 +56,5 @@ namespace rydavidson.Accela.Configuration.ConfigModels
                 SharePreparedStatements = MSSQLSharePreparedStatements;
             }
         }
-
-        public string GetAvDatabasePassword()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetJetspeedDatabasePassword()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
