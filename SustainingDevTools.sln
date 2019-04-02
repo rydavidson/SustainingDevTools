@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SustainingDevTools", "Susta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "..\AccelaLib\Configuration\Configuration.csproj", "{4C3CAB0A-5280-4571-85B4-AB9464C2BB49}"
 EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Installer", "Installer\Installer.aiproj", "{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -58,24 +56,6 @@ Global
 		{4C3CAB0A-5280-4571-85B4-AB9464C2BB49}.Release|x64.Build.0 = Release|x64
 		{4C3CAB0A-5280-4571-85B4-AB9464C2BB49}.Release|x86.ActiveCfg = Release|x86
 		{4C3CAB0A-5280-4571-85B4-AB9464C2BB49}.Release|x86.Build.0 = Release|x86
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.All|Any CPU.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.All|Any CPU.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.All|x64.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.All|x64.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.All|x86.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.All|x86.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Debug|Any CPU.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Debug|Any CPU.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Debug|x64.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Debug|x64.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Debug|x86.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Debug|x86.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Release|Any CPU.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Release|Any CPU.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Release|x64.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Release|x64.Build.0 = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Release|x86.ActiveCfg = DefaultBuild
-		{8DB81434-7C1B-47E3-B75D-ABE8FC4EB169}.Release|x86.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

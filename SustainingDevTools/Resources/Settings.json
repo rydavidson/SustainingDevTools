@@ -12,8 +12,8 @@
   "user_settings": {
     "auto_check_for_updates": "true",
     "show_debug_console": "false",
-    "git_username": "rydavidson@accela.com",
-    "git_password": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAUj0VydPF5kq+71PPDV/QqgQAAAACAAAAAAADZgAAwAAAABAAAADyBw2iO9MuCyo5lvMR4qdfAAAAAASAAACgAAAAEAAAANAZInJpxPfenftnp9n4beYQAAAA+2hKmLEKqFx0/HEy2ne2BhQAAADLtGcvveLMV4/qBSVo+v3cPLdBFw==",
+    "git_username": "",
+    "git_password": "",
     "repo_base_dir": "",
     "env_base_dir": ""
   }
