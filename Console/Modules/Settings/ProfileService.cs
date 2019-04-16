@@ -36,19 +36,22 @@ namespace Console.Modules.Settings
             InitLogger(cache.Settings["log_file"]);
         }
 
-        private void InitLogger(string _logFile, bool areSettingsLoaded = true)
+        private void InitLogger(string _logFile, bool areSettingsLoaded = true) //TODO: handle when settings aren't loaded
         {
-            _logFile = $"{cache.Settings["logging_dir"]}\\{_logFile}";
+            if (areSettingsLoaded)
+            {
+                _logFile = $"{cache.Settings["logging_dir"]}\\{_logFile}";
 
-            var config = new NLog.Config.LoggingConfiguration();
-            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = _logFile };
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+                var config = new NLog.Config.LoggingConfiguration();
+                var logfile = new NLog.Targets.FileTarget("logfile") { FileName = _logFile };
+                var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
 
-            config.AddRule(LogLevel.Trace, LogLevel.Fatal, logconsole);
-            config.AddRule(LogLevel.FromString(cache.Settings["logging_level"]), LogLevel.Fatal, logfile);
+                config.AddRule(LogLevel.Trace, LogLevel.Fatal, logconsole);
+                config.AddRule(LogLevel.FromString(cache.Settings["logging_level"]), LogLevel.Fatal, logfile);
 
-            LogManager.Configuration = config;
-            LogManager.ReconfigExistingLoggers();
+                LogManager.Configuration = config;
+                LogManager.ReconfigExistingLoggers();
+            }
         }
 
         private async Task LoadProfilesFromFile(string pathToFile)

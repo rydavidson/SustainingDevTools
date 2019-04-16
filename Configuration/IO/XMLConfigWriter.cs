@@ -10,35 +10,22 @@ namespace rydavidson.Accela.Configuration.IO
     class XMLConfigWriter : IConfigWriter
     {
         string PathToConfigFile;
+        XmlDocument ConfigFile;
 
         public XMLConfigWriter(string _pathToConfigFile)
         {
             PathToConfigFile = _pathToConfigFile;
 
-            XmlDocument doc = new XmlDocument();
-            using (XmlTextReader tr = new XmlTextReader(PathToConfigFile))
-            {
-                tr.Namespaces = true;
-                doc.Load(tr);
-            }
-            XmlNamespaceManager manager = new XmlNamespaceManager(doc.NameTable);
+            ConfigFile = ReadXML(PathToConfigFile);
+            XmlNamespaceManager manager = new XmlNamespaceManager(ConfigFile.NameTable);
             manager.AddNamespace("root", "urn:jboss:domain:1.4");
-            manager.AddNamespace("datasources", "urn:jboss:domain:datasources:1.1");
+            manager.AddNamespace("datasources", "urn:jboss:domain:datasources:1.1");            
 
-            XmlNode ConnectionUrlNode = doc.SelectSingleNode("/root:server/root:profile/datasources:subsystem/datasources:datasources/datasources:datasource[@jndi-name=\"java:/AA\"]/datasources:connection-url", manager);
-            XmlNode DriverNode = doc.SelectSingleNode("/root:server/root:profile/datasources:subsystem/datasources:datasources/datasources:datasource[@jndi-name=\"java:/AA\"]/datasources:driver", manager);
-            XmlNode DriverClassNode = doc.SelectSingleNode("/root:server/root:profile/datasources:subsystem/datasources:datasources/datasources:datasource[@jndi-name=\"java:/AA\"]/datasources:driver-class", manager);
-            XmlNode ExceptionSorterClassNodeAttribute = doc.SelectSingleNode("/root:server/root:profile/datasources:subsystem/datasources:datasources/datasources:datasource[@jndi-name=\"java:/AA\"]/datasources:validation/datasources:expection-sorter/@class-name", manager);
-            XmlNode CheckValidConnectionSQLNode = null;
-            if (DriverNode.InnerText.ToLower() == "oracle")
-            {
-                CheckValidConnectionSQLNode = doc.SelectSingleNode("/root:server/root:profile/datasources:subsystem/datasources:datasources/datasources:datasource[@jndi-name=\"java:/AA\"]/datasources:validation/datasources:check-valid-connection-sql", manager);
-            }
-            XmlNode SharePreparedStatementsNode = doc.SelectSingleNode("/root:server/root:profile/datasources:subsystem/datasources:datasources/datasources:datasource[@jndi-name=\"java:/AA\"]/datasources:statement/datasources:share-parepared-statements", manager);
         }
 
         public void WriteValueToConfig(string key, string value)
         {
+            
             switch (key.ToLower())
             {
                 case "driver":
@@ -59,6 +46,18 @@ namespace rydavidson.Accela.Configuration.IO
         public string GetPathToConfigFile()
         {
             return PathToConfigFile;
+        }
+
+        private XmlDocument ReadXML(string path)
+        {
+            XmlDocument doc = new XmlDocument();
+            using (XmlTextReader tr = new XmlTextReader(path))
+            {
+                tr.Namespaces = true;
+                doc.Load(tr);
+            }
+            return doc;
+
         }
     }
 }
