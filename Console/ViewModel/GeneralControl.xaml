@@ -13,13 +13,13 @@
     </UserControl.Resources>
 
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="0,0,0,8">
-        <Label Content="Git Repo Base Directory" HorizontalAlignment="Left" Margin="21,83,0,0" VerticalAlignment="Top"/>
+        <Label Content="Git Repo Staging Directory" HorizontalAlignment="Left" Margin="21,83,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="repoBaseDirTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="161,86,0,0" TextWrapping="Wrap" Text="{Binding cache.Settings[repo_base_dir],Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
         <Label Content="Git Settings" HorizontalAlignment="Left" Margin="21,20,0,0" VerticalAlignment="Top" Height="40" Width="135" FontSize="20"/>
         <Label Content="Git Username" HorizontalAlignment="Left" Margin="21,111,0,0" VerticalAlignment="Top" Width="135"/>
-        <TextBox x:Name="gitUsernameTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="{Binding Path=cache.Settings[git_username], Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
+        <TextBox x:Name="gitUsernameTextBox" IsEnabled="True" HorizontalAlignment="Left" Height="23" Margin="161,114,0,0" TextWrapping="Wrap" Text="{Binding Path=cache.Settings[git_username], Mode=TwoWay,diag:PresentationTraceSources.TraceLevel=None}" VerticalAlignment="Top" Width="479"/>
         <Label Content="Git Password" HorizontalAlignment="Left" Margin="21,139,0,0" VerticalAlignment="Top" Width="135"/>
-        <PasswordBox x:Name="gitPasswordTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="161,142,0,0" VerticalAlignment="Top" Width="479"/>
+        <PasswordBox x:Name="gitPasswordTextBox" IsEnabled="True" HorizontalAlignment="Left" Height="23" Margin="161,142,0,0" VerticalAlignment="Top" Width="479"/>
         <Button x:Name="GitButton" Content="Clone" IsEnabled="False" Click="GitButton_Click" HorizontalAlignment="Left" Margin="240,218,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
         <ComboBox x:Name="repoComboBox" IsEnabled="False" HorizontalAlignment="Left" Margin="105,216,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="repoComboBox_SelectionChanged"/>
         <Label Content="Repo" HorizontalAlignment="Left" Margin="23,212,0,0" VerticalAlignment="Top"/>

@@ -99,6 +99,7 @@ namespace Console.ViewModel
                 if (repo.name == repoComboBox.SelectedItem.ToString())
                 {
                     PopulateBranches(repo);
+                    cache.Settings["repo_base_dir"] += $"\\${repo.name}\\HEAD";
                 }
             }
         }
