@@ -222,9 +222,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Configuration\Configuration.csproj">
       <Project>{4c3cab0a-5280-4571-85b4-ab9464c2bb49}</Project>
       <Name>Configuration</Name>
