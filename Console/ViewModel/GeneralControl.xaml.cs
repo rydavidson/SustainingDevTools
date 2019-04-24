@@ -49,6 +49,7 @@ namespace Console.ViewModel
             DataContext = this;
             settingsService = new SettingsService();
             InitLogger();
+            PopulateRepos();
         }
 
         private void InitLogger(string _logFile = DefaultLogFile)
@@ -86,6 +87,8 @@ namespace Console.ViewModel
             {
                 branchComboBox.Items.Add(branch.branch);
             }
+
+            GitButton.IsEnabled = true;
         }
 
         #endregion
@@ -99,9 +102,11 @@ namespace Console.ViewModel
                 if (repo.name == repoComboBox.SelectedItem.ToString())
                 {
                     PopulateBranches(repo);
-                    cache.Settings["repo_base_dir"] += $"\\${repo.name}\\HEAD";
+                    cache.Settings["repo_base_dir"] = $"{cache.Settings["env_base_dir"]}\\{repo.name}\\HEAD";
+                    Debug.WriteLine(cache.Settings["repo_base_dir"]);
                 }
             }
+            
         }
 
         private async void saveButton_Click(object sender, RoutedEventArgs e)
