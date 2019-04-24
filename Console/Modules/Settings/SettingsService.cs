@@ -203,13 +203,11 @@ namespace Console.Modules.Settings
         public async Task WriteSettingsToFile(string file = DefaultSettingsFile)
         {
 
-            foreach(var p in settingsData.user_settings)
+            foreach (JProperty prop in settingsData.user_settings)
             {
-                PropertyInfo prop = settingsData.user_settings.GetType().GetProprty(p.name);
-
                 if (settings.ContainsKey(prop.Name))
                 {
-                    prop.SetValue(settingsData.user_settings, settings[prop.Name]);
+                    prop.Value = settings[prop.Name];
                 }
             }
 
